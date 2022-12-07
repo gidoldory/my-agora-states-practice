@@ -29,8 +29,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          aws s3 cp \
+          aws s3 sync \
             --region ap-northeast-2 \
-            build s3://practice-bucket-deploy-gidoldory \
+            build s3://fe-96-gidoldory-s3/ \
             --delete
-        working-directory: s3://practice-bucket-deploy-gidoldory
+        working-directory: ./my-agora-states-client/build
